@@ -1,0 +1,353 @@
+HTML_CONTENT = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Gift For My Love</title>
+    <!-- Load Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons for aesthetic navigation -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom styles for a romantic look */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F0FC; /* Very light lavender background */
+        }
+        .page-container {
+            min-height: calc(100vh - 80px); /* Account for fixed footer */
+            padding-bottom: 20px;
+            display: none; /* Pages are hidden by default, shown by JS */
+        }
+        .page-header {
+            background-color: #6B21A8; /* Deep Purple */
+            color: #FEE7FF; /* Very light Pink/White */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            margin-bottom: 24px;
+        }
+        .nav-button {
+            transition: all 0.2s ease;
+        }
+        .nav-button.active {
+            color: #F9A8D4; /* Highlight pink for active page */
+            transform: translateY(-5px);
+            box-shadow: 0 -5px 15px rgba(249, 168, 212, 0.5); /* Glowing effect */
+        }
+        /* Mobile-first: Ensure content is scrollable and centered */
+        @media (min-width: 640px) {
+            .page-content {
+                max-width: 600px;
+            }
+        }
+    </style>
+</head>
+<body class="selection:bg-pink-300 selection:text-pink-900">
+
+    <div id="app" class="pb-20"> <!-- Increased padding bottom for fixed nav -->
+        
+        <!-- Page 1: Welcome & Main Message -->
+        <div id="page1_welcome" class="page-container p-4 sm:p-6">
+            <header class="page-header p-6">
+                <h1 class="text-3xl font-extrabold tracking-tight">For My Dearest Love, Nur Izzani Binti Salleh</h1>
+                <p class="mt-1 text-sm opacity-90">kmk molah a little surprise web utk kesayangan sayeee.</p>
+            </header>
+             <!-- Music Player -->
+                <div class="bg-white p-5 rounded-2xl shadow-xl border-l-4 border-fuchsia-400">
+                    <h2 class="text-xl font-semibold text-fuchsia-700 mb-3 flex items-center">
+                        <i data-lucide="music" class="w-5 h-5 mr-2"></i> Play Our Song
+                    </h2>
+                    <audio controls class="w-full rounded-full shadow-md">
+                        <!-- *** EDIT: MUSIC FILE PATH HERE (e.g., ./my_song.mp3) *** -->
+                        <source src="./my_song_of_love.mp3" type="audio/mpeg">
+                        <source src="https://raw.githubusercontent.com/hzainal792-afk/To-my-dearest-ijan/ef067137be0fa14a0901e746533e4a3331a15a00/Resah.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <p class="text-xs text-gray-500 mt-2">
+                        This song remind me of you rawrrr. Mainkan waktu ktk baca text dibawah heheeeeee.
+                    </p>
+                </div>
+                
+            
+            <div class="page-content mx-auto">
+                <div class="bg-white p-6 rounded-3xl shadow-xl border-t-4 border-pink-400">
+                    <!-- *** EDIT: MAIN PHOTO URL HERE *** -->
+                    <img id="main-photo" 
+                         src="https://raw.githubusercontent.com/hzainal792-afk/To-my-dearest-ijan/refs/heads/main/IMG_20251112_152940.png"
+                         alt="Your main photo together"  
+                         class="w-full h-auto rounded-xl object-cover shadow-lg"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/F9A8D4/6B21A8?text=Image+Load+Failed'; this.title='Please replace the src URL with your image link or a local file path (e.g., ./my_photo.jpg).';">
+                    
+                    <h2 class="text-2xl font-semibold mt-6 text-purple-700">A Message From My Heart</h2>
+                    <div id="welcome-text" class="text-gray-600 mt-2 leading-relaxed">
+                        <!-- *** EDIT: MAIN MESSAGE TEXT HERE *** -->
+                        <p class="mb-3">
+                            my precious one, kmk molah this web just for you!! (ofcos with some ai helps but kmk blaja coding juak keyh) btw TODAY IS YOUR SPECIAL DAYYY!!! YOU DESERVES ALL LOVEEE IS THIS WORLD MMUAHHH <3. tekan2 ktk bawah ya banyak gik text and our sweet memories together hehe :)
+                        </p>
+                        <p class="italic text-pink-500">
+                           You're the most gorgeous girl that I've ever found in my life. Even though you always say that you're ugly, not as beautiful as others, for me, no, you're the one. From the start of our meeting, I could imagine our future together! You've done well till this day, and I'm so proud of you ;)
+                        </p>
+                        <!-- END EDIT -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 2: Photo Memory Lane -->
+        <div id="page2_memories" class="page-container p-4 sm:p-6">
+            <header class="page-header p-6">
+                <h1 class="text-3xl font-extrabold tracking-tight">Kenangan Indah Apis dan Ijan</h1>
+                <p class="mt-1 text-sm opacity-90">Banyak lagik sebenarnya but tok yang cute2 kmk jumpa ahaks</p>
+            </header>
+
+            <div class="page-content mx-auto">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    
+                    <!-- Memory Card 1 -->
+                    <div class="bg-white p-4 rounded-xl shadow-lg transform hover:scale-[1.02] transition duration-300">
+                        <!-- *** EDIT: PHOTO 1 URL HERE *** -->
+                        <img src="https://raw.githubusercontent.com/hzainal792-afk/To-my-dearest-ijan/refs/heads/main/IMG_20251112_185719.jpg " 
+                             alt="Memory 1" 
+                             class="w-full h-40 object-cover rounded-lg"
+                             onerror="this.onerror=null; this.src='https://placehold.co/400x300/F97316/FFFFFF?text=Image+Load+Failed';"> 
+                        <p class="text-sm mt-3 font-medium text-pink-600">
+                        
+                            <!-- *** EDIT: PHOTO 1 CAPTION HERE *** -->
+                            The first picture that we took. sooo cute nangga how shy we both there ❤️
+                        </p>
+                    </div>
+
+                    <!-- Memory Card 2 -->
+                    <div class="bg-white p-4 rounded-xl shadow-lg transform hover:scale-[1.02] transition duration-300">
+                         <!-- *** EDIT: PHOTO 2 URL HERE *** -->
+                        <img src="https://raw.githubusercontent.com/hzainal792-afk/To-my-dearest-ijan/refs/heads/main/Screenshot_2025-11-12-19-10-38-302_org.telegram.messenger-edit.jpg" 
+                             alt="Memory 2" 
+                             class="w-full h-40 object-cover rounded-lg"
+                             onerror="this.onerror=null; this.src='https://placehold.co/400x300/5B21B6/FFFFFF?text=Image+Load+Failed';">
+                        <p class="text-sm mt-3 font-medium text-purple-600">
+                            <!-- *** EDIT: PHOTO 2 CAPTION HERE *** -->
+                            look how banyak lalu kita dh berubah daripada before!! 
+                        </p>
+                    </div>
+
+                    <!-- Memory Card 3 -->
+                    <div class="bg-white p-4 rounded-xl shadow-lg transform hover:scale-[1.02] transition duration-300">
+                         <!-- *** EDIT: PHOTO 3 URL HERE *** -->
+                        <img src="https://raw.githubusercontent.com/hzainal792-afk/To-my-dearest-ijan/refs/heads/main/IMG_20251112_193822.jpg" 
+                             alt="Memory 3" 
+                             class="w-full h-40 object-cover rounded-lg"
+                             onerror="this.onerror=null; this.src='https://placehold.co/400x300/06B6D4/FFFFFF?text=Image+Load+Failed';">
+                        <p class="text-sm mt-3 font-medium text-blue-600">
+                            <!-- *** EDIT: PHOTO 3 CAPTION HERE *** -->
+                            ktk is always ada dengan kmk even masaya kmk belum ada future yang jelas. And kmk appreciate lalu ya. Terima kasih sebab percaya dengan kmk.💛💛💛
+                        </p>
+                    </div>
+
+                    <!-- Memory Card 4 (Add more by copying a card!) -->
+                    <div class="bg-white p-4 rounded-xl shadow-lg transform hover:scale-[1.02] transition duration-300">
+                         <!-- *** EDIT: PHOTO 4 URL HERE *** -->
+                        <img src="https://raw.githubusercontent.com/hzainal792-afk/To-my-dearest-ijan/refs/heads/main/IMG_20251112_194523.jpg" 
+                             alt="Memory 4" 
+                             class="w-full h-40 object-cover rounded-lg"
+                             onerror="this.onerror=null; this.src='https://placehold.co/400x300/D946EF/FFFFFF?text=Image+Load+Failed';">
+                        <p class="text-sm mt-3 font-medium text-fuchsia-600">
+                            <!-- *** EDIT: PHOTO 4 CAPTION HERE *** -->
+                            ANDDD THAT IS US NOWW!!. Duak duak makin gebuu, kmk doakan kita always happy and semoga semua usaha kita untuk halalkan hubungan tok dipermudahkan. 😘✨🌹
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 3: Music & Love Letter -->
+        <div id="page3_letter" class="page-container p-4 sm:p-6">
+            <header class="page-header p-6">
+                <h1 class="text-3xl font-extrabold tracking-tight">Surat Cinta Apis Untuk Si Izzani</h1>
+                <p class="mt-1 text-sm opacity-90">Jangan Senyum Lama-lama Tau ahakssss.</p>
+            </header>
+
+            <div class="page-content mx-auto space-y-6">
+                
+       
+                <!-- Love Letter Text Area -->
+                <div class="bg-white p-6 rounded-2xl shadow-xl border-r-4 border-purple-400">
+                    <h2 class="text-xl font-semibold text-purple-700 mb-3 flex items-center">
+                        <i data-lucide="heart" class="w-5 h-5 mr-2 fill-red-400 text-red-400"></i> My Forever Letter
+                    </h2>
+                    <div id="love-letter-text" class="text-gray-700 whitespace-pre-wrap leading-relaxed">
+                        <!-- *** EDIT: PASTE YOUR LONG LOVE LETTER TEXT HERE *** -->
+                        HAPPY BIRTHDAY TO MY DEAREST LOVE NUR IZZANI BINTI SALLEH 😍❤️❤️❤️❤️❤️
+
+Today dh genap dh ktk 23 tahun. Ohemjiii dah masuk alam dewasa yang real dah ijann. Kmk sure ktk excited hari tok ofcos sbb gift kmk and pa semua 🤫
+
+Kmk doakan ktk always berjaya dunia akhirat. Semoga dengan bertambahnya umur ktk, bertambah juak keberkatan dalam kehidupan ktk, bertambah juak org2 yang memberi manfaat kepada ktk and semoga bertambah semua rezeki ktkorg sekeluarga aaminn.
+
+Kmk so proud of you. Yes, we all know how this year treat you macam ne. Banyak gelak, tangis, suka dan hiba. But you're still here! Strong as ever! And ya part nok kmk suka kat ktk. Kmk harap ktk sentiasa bersabar dan sentiasa berbaik sangka dengan kehendak Allah. 
+
+Last but not least (senanya banyak gik but tempat tok terhad) kmk doakan tok adalah last befday ktk sambut as someone yang bujang MUAHAHAHA😝 now kmk pun berusaha utk jadikan ktk isteri kmk🫵😍
+
+Yours, 
+Apis 'hensem' zainal
+
+
+                        <!-- END EDIT -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Fixed Bottom Navigation (Mobile-Friendly) -->
+    <nav class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 shadow-2xl z-50">
+        <div class="flex justify-around items-center h-20 max-w-lg mx-auto">
+            
+            <button id="nav1" onclick="showPage('page1_welcome', this)" class="nav-button active flex flex-col items-center p-2 text-purple-700">
+                <i data-lucide="home" class="w-6 h-6"></i>
+                <span class="text-xs mt-1 font-semibold">Welcome</span>
+            </button>
+
+            <button id="nav2" onclick="showPage('page2_memories', this)" class="nav-button flex flex-col items-center p-2 text-gray-400">
+                <i data-lucide="image" class="w-6 h-6"></i>
+                <span class="text-xs mt-1 font-semibold">Memories</span>
+            </button>
+
+            <button id="nav3" onclick="showPage('page3_letter', this)" class="nav-button flex flex-col items-center p-2 text-gray-400">
+                <i data-lucide="mail" class="w-6 h-6"></i>
+                <span class="text-xs mt-1 font-semibold">Love Letter</span>
+            </button>
+        </div>
+    </nav>
+
+
+    <script>
+        // --- JAVASCRIPT LOGIC FOR SINGLE-PAGE NAVIGATION ---
+        const pages = ['page1_welcome', 'page2_memories', 'page3_letter'];
+        const navButtons = document.querySelectorAll('.nav-button');
+
+        function showPage(pageId, activeBtn) {
+            pages.forEach(id => {
+                const page = document.getElementById(id);
+                if (page) {
+                    page.style.display = 'none';
+                }
+            });
+
+            const pageToShow = document.getElementById(pageId);
+            if (pageToShow) {
+                pageToShow.style.display = 'block';
+                window.scrollTo(0, 0); 
+            }
+
+            navButtons.forEach(btn => {
+                btn.classList.remove('active', 'text-purple-700');
+                btn.classList.add('text-gray-400');
+            });
+
+            if (activeBtn) {
+                activeBtn.classList.add('active', 'text-purple-700');
+                activeBtn.classList.remove('text-gray-400');
+            }
+        }
+
+        window.onload = function() {
+            lucide.createIcons();
+            showPage('page1_welcome', document.getElementById('nav1'));
+        };
+        
+    </script>
+</body>
+</html>
+"""
+# ----------------------------------------------------------------------
+# STEP 2: Python Web Server Logic (Launches the site)
+# ----------------------------------------------------------------------
+import http.server
+import socketserver
+import webbrowser
+import os
+import threading
+import time
+import sys
+
+# Configuration
+PORT = 8000
+HTML_FILE = "gift_website.html"
+
+# --- Server Startup Function (runs in a separate thread) ---
+def run_server():
+    try:
+        # Use SimpleHTTPRequestHandler to serve the files
+        Handler = http.server.SimpleHTTPRequestHandler
+        
+        # Create the server
+        with socketserver.TCPServer(("", PORT), Handler) as httpd:
+            print(f"Server is running at http://localhost:{PORT}/{HTML_FILE}")
+            
+            # This line keeps the server running
+            httpd.serve_forever()
+
+    except Exception as e:
+        # Check if the port is already in use
+        if "Address already in use" in str(e):
+            print("\n!!! ERROR: Port 8000 is already in use. !!!")
+            print("Please check if the script is already running, or try again later.")
+        else:
+            print(f"\nServer error: {e}")
+    except KeyboardInterrupt:
+        # This handles the server shutdown when the user presses stop in Pydroid
+        print("\nServer manually stopped.")
+        sys.exit(0)
+    finally:
+        # This block ensures cleanup happens after server stops
+        if os.path.exists(HTML_FILE):
+             os.remove(HTML_FILE) # Clean up the temporary file
+        print(f"Cleanup complete. Removed temporary file: {HTML_FILE}")
+
+
+# --- Main Execution ---
+if __name__ == "__main__":
+    
+    # 1. Write the HTML content to a file on disk
+    try:
+        with open(HTML_FILE, "w", encoding="utf-8") as f:
+            f.write(HTML_CONTENT)
+        print(f"Created temporary file: {HTML_FILE}")
+    except Exception as e:
+        print(f"Error writing HTML file: {e}")
+        sys.exit(1)
+
+    # 2. Start the web server in a background thread
+    server_thread = threading.Thread(target=run_server, daemon=True)
+    server_thread.start()
+    
+    # Give the server a moment to start up
+    time.sleep(1) 
+
+    # 3. Open the website in the browser (uses Android's default browser)
+    local_url = f"http://localhost:{PORT}/{HTML_FILE}"
+    print(f"\nOpening browser to: {local_url}")
+    webbrowser.open(local_url)
+
+    # 4. Keep the main script alive so the server thread can continue running
+    # The 'input()' waits for the user to press Enter in the Pydroid console 
+    # but the server will continue running until the user presses the 'Stop' button.
+    try:
+        print("\n\n*** Website is running! ***")
+        print("Go back to your browser to view it.")
+        print("To stop the server, press the 'Stop' button (red square) in Pydroid.")
+        
+        while server_thread.is_alive():
+            time.sleep(1)
+
+    except KeyboardInterrupt:
+        pass # Handled by the server thread shutdown
+    finally:
+        # This cleanup handles cases where the script is forcefully stopped
+        if os.path.exists(HTML_FILE):
+             os.remove(HTML_FILE)
+        print("Script finished and temporary file cleaned up.")
